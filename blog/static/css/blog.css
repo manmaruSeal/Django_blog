@@ -1,3 +1,10 @@
-h1 a, h2 a {
-    color: #C25100;
+h1 a {
+    color: rgb(255, 101, 91);
+}
+h3 a {
+    color: rgb(110, 187, 164);
+}
+
+body {
+    padding-left: 20px;
 }
