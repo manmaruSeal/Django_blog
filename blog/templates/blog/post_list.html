@@ -6,10 +6,16 @@
 	</head>
 	<body>
 		<div>
-		<h2><a href="/">Django Blog</a></h2>
+		<h1><a href="/">Django Blog</a></h1>
 		</div>
-
-		<div>
+		{% for post in posts %}
+    	<div>
+			<p>投稿日: {{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p>{{ post.text|linebreaksbr }}</p>
+    	</div>
+		{% endfor %}
+		<!-- <div>
 			<h3><a href="">2021.7.1</a></h2>
 		    <p>Djangoでブログ作り中。。。</p>
 		    <p>create blog now...</p>
@@ -18,6 +24,6 @@
 			<h3><a href="">2021.7.2</a></h2>
 		    <p>Djangoでブログ作り中。。。2</p>
 		    <p>create blog now...2</p>
-		</div>
+		</div>-->
 	</body>
 </html>
