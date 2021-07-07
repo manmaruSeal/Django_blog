@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link href="//fonts.googleapis.com/css?family=DotGothic16&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+	    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<title>blog page:)☆</title>
+	</head>
+	<body>
+		<div class = "page-header">
+		<h1><a href="/">Django Blog(´-ω-`)</a></h1>
+		</div>
+		<div class="content">
+			{% block content %}
+            {% endblock %}
+		</div>
+		<!-- <div>
+			<h3><a href="">2021.7.1</a></h2>
+		    <p>Djangoでブログ作り中。。。</p>
+		    <p>create blog now...</p>
+		</div>
+		<div>
+			<h3><a href="">2021.7.2</a></h2>
+		    <p>Djangoでブログ作り中。。。2</p>
+		    <p>create blog now...2</p>
+		</div>-->
+	</body>
+</html>

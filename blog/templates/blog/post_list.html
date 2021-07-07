@@ -1,33 +1,13 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="ja">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-	    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-		<title>blog page:)☆</title>
-	</head>
-	<body>
-		<div>
-		<h1><a href="/">Django Blog(+_+)</a></h1>
-		</div>
-		{% for post in posts %}
-    	<div>
-			<p>投稿日: {{ post.published_date }}</p>
-			<h3><a href="">{{ post.title }}</a></h2>
+{% extends 'blog/base.html' %}
+
+{% block content %}	
+	{% for post in posts %}
+		<div class = "post">
+			<div class = "date">
+				<p>投稿日: {{ post.published_date }}</p>
+			</div>
+			<h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 			<p>{{ post.text|linebreaksbr }}</p>
-    	</div>
-		{% endfor %}
-		<!-- <div>
-			<h3><a href="">2021.7.1</a></h2>
-		    <p>Djangoでブログ作り中。。。</p>
-		    <p>create blog now...</p>
 		</div>
-		<div>
-			<h3><a href="">2021.7.2</a></h2>
-		    <p>Djangoでブログ作り中。。。2</p>
-		    <p>create blog now...2</p>
-		</div>-->
-	</body>
-</html>
+		{% endfor %}
+{% endblock %}
