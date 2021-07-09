@@ -1,6 +1,7 @@
 h1 a,h3 a,h2  {
     color: #69460698;
     font-family:'DotGothic16';
+    margin-top: 0;
     
 }
 
@@ -12,29 +13,41 @@ h1, h2, h3, h4 {
 
 
 body {
-    padding-left: 20px;
-    background-color: rgba(103, 108, 109, 0.295);
+    
+    background-color: rgb(255, 167, 161);
+    padding-left: 0;
+    
 }
 
 .page-header {
     background-color: rgb(157, 226, 205);
     padding: 20px 20px 20px 50px;
-}
-.post {
-    margin-bottom: 50px;
-    margin-top: 0;
+    margin: 0;
     
+    
+    
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.post {
+    padding: 20px 50px 20px 0px;
+    margin: 0;
+    width: 100%;
+    position:static;
     
 }
 .date{
     color: #362e17;
     font-size: 10pt;
+    
 }
 .content {
-    background-color: rgb(255, 167, 161);
     padding: 10px 20px 40px 50px;
-
-    
 }
 .post-form textarea, .post-form input {
     width: 100%;
@@ -48,11 +61,7 @@ body {
 .save {
     float: right;
 }
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 36pt;
-    text-decoration: none;
-}
+
 .post h2 a, .post h2 a:visited {
     color: #d42020;
 }
