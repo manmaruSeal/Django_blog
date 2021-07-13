@@ -123,3 +123,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 #log inに成功すると、blogの記事リストページへ遷移
 LOGIN_REDIRECT_URL = '/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
