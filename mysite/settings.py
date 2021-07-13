@@ -120,3 +120,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+#log inに成功すると、blogの記事リストページへ遷移
+LOGIN_REDIRECT_URL = '/'

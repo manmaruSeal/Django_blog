@@ -65,3 +65,8 @@ body {
 .post h2 a, .post h2 a:visited {
     color: #d42020;
 }
+
+.center {
+    text-align: center; 
+}
+
