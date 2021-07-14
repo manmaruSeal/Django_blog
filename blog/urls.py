@@ -25,4 +25,10 @@ urlpatterns = [
 
     #コメント追加ページ
     path('post/<int:pk>/comment/',views.add_comment_to_post, name='add_comment_to_post'),
+
+    #コメント承認
+    path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
+    
+    #コメント削除
+    path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),
 ]

@@ -21,15 +21,22 @@
     <hr>
     <p>★Commnts Space☆</p><br>
     {% for comment in post.comments.all %}
+        {% if comment.approved_comment or user.is_authenticated %}
         <div class="comment">
-            <div class="date">{{ comment.created_date }}</div>
+            <div class="date">
+                {{ comment.created_date }}
+                {% if not comment.approved_comment %}
+                <a  href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a  href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                {% endif %} 
+            </div>
             <strong>{{ comment.author }}</strong>
             <p>{{ comment.text|linebreaks }}</p>
             <br>
         </div>
+        {% endif %}
     {% empty %}
         <p>コメントはまだないよ(´-ω-`)</p>
-        
     {% endfor %}
     <a  href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment!</a>
 {% endblock %}
