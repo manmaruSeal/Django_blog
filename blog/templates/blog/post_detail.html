@@ -18,4 +18,18 @@
         <h3>{{ post.title }} </h3>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    <hr>
+    <p>★Commnts Space☆</p><br>
+    {% for comment in post.comments.all %}
+        <div class="comment">
+            <div class="date">{{ comment.created_date }}</div>
+            <strong>{{ comment.author }}</strong>
+            <p>{{ comment.text|linebreaks }}</p>
+            <br>
+        </div>
+    {% empty %}
+        <p>コメントはまだないよ(´-ω-`)</p>
+        
+    {% endfor %}
+    <a  href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment!</a>
 {% endblock %}

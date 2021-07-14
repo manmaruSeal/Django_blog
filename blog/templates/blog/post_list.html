@@ -3,12 +3,12 @@
 {% block content %}	
 	{% for post in posts %}
 		<div class = "post">
-			
 			<div class = "date">
 				<p><span class="glyphicon glyphicon-time"></span> 投稿日: {{ post.published_date }}</p>
 			</div>
 			<h3><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
 			<p>{{ post.text|linebreaksbr }}</p>
+			<a href="{% url 'post_detail' pk=post.pk %}" id ="come">Comments: {{ post.comments.count }}</a>
 		</div>
 		{% endfor %}
 {% endblock %}

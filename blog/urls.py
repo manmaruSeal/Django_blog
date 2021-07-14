@@ -22,4 +22,7 @@ urlpatterns = [
 
     #記事削除ページ
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
+
+    #コメント追加ページ
+    path('post/<int:pk>/comment/',views.add_comment_to_post, name='add_comment_to_post'),
 ]

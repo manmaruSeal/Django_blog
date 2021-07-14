@@ -70,3 +70,10 @@ body {
     text-align: center; 
 }
 
+.comment {
+    margin: 20px 0px 20px 20px;
+}
+
+#come{
+    color: #69460698;
+}
