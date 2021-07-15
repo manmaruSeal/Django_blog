@@ -41,6 +41,11 @@ class Comment(models.Model):
     def approve(self):
         self.approved_comment = True
         self.save()
+    
+    #未承認メソッド
+    def unapprove(self):
+        self.approved_comment = False
+        self.save()
 
     def __str__(self):
         return self.text

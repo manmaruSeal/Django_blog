@@ -31,6 +31,9 @@ urlpatterns = [
 
     #コメント承認
     path('comment/<int:pk>/approve/', views.comment_approve, name='comment_approve'),
+
+    #コメン非承認
+    path('comment/<int:pk>/unapprove/', views.comment_unapprove, name='comment_unapprove'),
     
     #コメント削除
     path('comment/<int:pk>/remove/', views.comment_remove, name='comment_remove'),

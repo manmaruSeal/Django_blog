@@ -98,6 +98,13 @@ def comment_approve(request, pk):
     comment.approve()
     return redirect('post_detail', pk=comment.post.pk)
 
+#コメント承認ボタン押下されたら、承認メソッドを実行し、記事詳細ページへ遷移
+@login_required
+def comment_unapprove(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    comment.unapprove()
+    return redirect('post_detail', pk=comment.post.pk)
+
 #コメント削除ボタン押下されたら、削除メソッドを実行し、記事詳細ページへ
 @login_required
 def comment_remove(request, pk):
