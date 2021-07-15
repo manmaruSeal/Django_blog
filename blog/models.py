@@ -15,6 +15,11 @@ class Post(models.Model):
         self.published_date = timezone.now()
         self.save()
 
+    #非公開メソッド
+    def private(self):
+        self.published_date = None
+        self.save()
+
     #承認されたコメントを返す
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)

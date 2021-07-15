@@ -63,6 +63,13 @@ def post_publish(request, pk):
     post.publish()
     return redirect('post_detail', pk=pk)
 
+#非公開ボタンが押下されたら、公開日をnullし、詳細ページへ遷移
+@login_required
+def post_private(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    post.private()
+    return redirect('post_detail', pk=pk)
+
 #記事削除ボタンが押下されたら、記事を削除し、記事リストページへ遷移
 @login_required
 def post_remove(request, pk):

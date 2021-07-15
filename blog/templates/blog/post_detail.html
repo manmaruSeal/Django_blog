@@ -8,11 +8,12 @@
         {% endif %}
 
         {% if post.published_date %}
+        <a class="btn btn-lg" title="非公開" href="{% url 'post_private' pk=post.pk %}"><span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span></a>
             <div class="date">
                 <p><span class="glyphicon glyphicon-time"></span> 投稿日:{{ post.published_date }}</p>
             </div>
         {% else %}
-        <a class="btn btn-lg"  href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+        <a class="btn btn-lg" title="公開" href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
         <p class="date"><span class="glyphicon glyphicon-time"></span> 作成日:{{post.created_date}}</p>
         {% endif %}
         <h3>{{ post.title }} </h3>

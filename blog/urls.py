@@ -20,6 +20,9 @@ urlpatterns = [
     #記事公開ページ
     path('post/<pk>/publish/', views.post_publish, name='post_publish'),
 
+   #記事非公開ページ
+    path('post/<pk>/private/', views.post_private, name='post_private'),
+
     #記事削除ページ
     path('post/<pk>/remove/', views.post_remove, name='post_remove'),
 
