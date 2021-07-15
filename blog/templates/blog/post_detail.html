@@ -3,8 +3,8 @@
 {% block content %}
     <div class="post" >
         {% if user.is_authenticated %}
-        <a class="btn btn-lg" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>   
-        <a class="btn btn-lg" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        <a class="btn btn-lg" href="{% url 'post_edit' pk=post.pk %}" title="編集"><span class="glyphicon glyphicon-pencil"></span></a>   
+        <a class="btn btn-lg" href="{% url 'post_remove' pk=post.pk %}" title="削除"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
 
         {% if post.published_date %}
@@ -12,7 +12,7 @@
                 <p><span class="glyphicon glyphicon-time"></span> 投稿日:{{ post.published_date }}</p>
             </div>
         {% else %}
-        <a class="btn btn-dark btn-lg"  href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+        <a class="btn btn-lg"  href="{% url 'post_publish' pk=post.pk %}"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
         <p class="date"><span class="glyphicon glyphicon-time"></span> 作成日:{{post.created_date}}</p>
         {% endif %}
         <h3>{{ post.title }} </h3>
@@ -26,8 +26,8 @@
             <div class="date">
                 {{ comment.created_date }}
                 {% if not comment.approved_comment %}
-                <a  href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
-                <a  href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <a class="btn btn-dark" href="{% url 'comment_approve' pk=comment.pk %}" title="承認"><span class="glyphicon glyphicon-ok"></span></a>
+                <a class="btn btn-dark" href="{% url 'comment_remove' pk=comment.pk %}" title="削除"><span class="glyphicon glyphicon-remove"></span></a>
                 {% endif %} 
             </div>
             <strong>{{ comment.author }}</strong>
@@ -38,5 +38,5 @@
     {% empty %}
         <p>コメントはまだないよ(´-ω-`)</p>
     {% endfor %}
-    <a  href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment!</a>
+    <a class="btn btn-lg" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment!</a>
 {% endblock %}

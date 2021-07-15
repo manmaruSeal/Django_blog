@@ -57,6 +57,7 @@ body {
     float: right;
     font-size: 26pt;
     margin-right: 20px;
+    font-family:'DotGothic16';
 }
 .save {
     float: right;
@@ -77,3 +78,13 @@ body {
 #come{
     color: #69460698;
 }
+
+.btn{
+    color: #69460698;
+    font-family:'DotGothic16';
+}
+
+p,.date p,strong{
+    font-family:'DotGothic16';
+}
+
