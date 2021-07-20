@@ -23,7 +23,21 @@
 		{% else %}
             <a href="{% url 'login' %}" class="top-menu" title="ログイン"><span class="glyphicon glyphicon-log-in"></span></a>
 		{% endif %}
-		<h1><a href="/">Django Blog</a></h1>
+		<h1><a href="/">Django Blog</a></h1><br>
+		<nav class="pc-nav">
+			<ul>
+				{% if user.is_authenticated %}
+				<!--表示なし-->
+				{% else %}
+				<li><a href="{% url 'login' %}">ログインページ</a></li>
+				{% endif %}
+				<li><a href="/">記事リストページ(メイン)</a></li>
+				<li><a href="{% url 'post_new' %}">記事作成ページ</a></li>
+				<li><a href="{% url 'post_draft_list' %}">未公開記事リストページ</a></li>
+				
+			</ul>
+		</nav>
+
 		</div>
 
 		<div class="content container">

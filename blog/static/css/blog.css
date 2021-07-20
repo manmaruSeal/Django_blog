@@ -88,3 +88,20 @@ p,.date p,strong{
     font-family:'DotGothic16';
 }
 
+ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    color: #362e17;
+ }
+
+li {
+margin: 0 0 0 70px;
+font-size: 14px;
+
+}
+
+a {	
+    text-decoration: none;
+    color: #520303;
+ }

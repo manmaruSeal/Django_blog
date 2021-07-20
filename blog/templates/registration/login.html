@@ -8,6 +8,11 @@
     <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
         <div class="center">
+        <tr>
+            <td>＊デモユーザーのアカウント情報＊</td><br>
+            <td>ユーザー名：testuser</td><br>
+            <td>  パスワード：test  </td>
+        </tr>
         <br><br>
         <tr>
             <td>{{ form.username.label_tag }}</td>
