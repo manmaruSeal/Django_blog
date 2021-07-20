@@ -58,7 +58,7 @@
     
     <!--該当するpkのポストと紐づいているコメントがない場合-->
     {% empty %}
-        <p>コメントはまだないよ(´-ω-`)</p>
+        <p>コメントはまだありません。。。</p>
     {% endfor %}
     <a class="btn btn-lg" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment!</a>
 {% endblock %}
