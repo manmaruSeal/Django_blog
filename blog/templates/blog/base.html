@@ -9,44 +9,50 @@
 	    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
 		<link rel="icon" href="{% static 'icon/favicon.ico' %}">
 		<link rel="apple-touch-icon" sizes="180x180" href="{% static 'icon/apple-touch-icon-180x180.png' %}">
-		<title>blog page:)☆</title>
+		<title>Django Blog</title>
 	</head>
 	<body>
-
-		<div class = "page-header">
-		{% if user.is_authenticated %}
-			<a href="{% url 'post_new' %}" class="top-menu" title="記事作成"><span class="glyphicon glyphicon-plus"></span></a>
-			<a href="{% url 'post_draft_list' %}" class="top-menu" title="未公開記事リスト"><span class="glyphicon glyphicon-edit"></span></a>
-			
-			<a href="{% url 'logout' %}" class="top-menu" title="ログアウト"><span class="glyphicon glyphicon-log-out"></span></a>
-			<p class="top-menu">Hello,{{ user.username }}</p>
-		{% else %}
-            <a href="{% url 'login' %}" class="top-menu" title="ログイン"><span class="glyphicon glyphicon-log-in"></span></a>
-		{% endif %}
-		<h1><a href="/">Django Blog</a></h1><br>
-		<nav class="pc-nav">
-			<ul>
+		
+		<div class="wrapper">
+			<div class = "page-header">
 				{% if user.is_authenticated %}
-				<!--表示なし-->
+					<a href="{% url 'post_new' %}" class="top-menu" title="記事作成"><span class="glyphicon glyphicon-plus"></span></a>
+					<a href="{% url 'post_draft_list' %}" class="top-menu" title="未公開記事リスト"><span class="glyphicon glyphicon-edit"></span></a>
+					
+					<a href="{% url 'logout' %}" class="top-menu" title="ログアウト"><span class="glyphicon glyphicon-log-out"></span></a>
+					<p class="top-menu">Hello,{{ user.username }}</p>
 				{% else %}
-				<li><a href="{% url 'login' %}">ログインページ</a></li>
+					<a href="{% url 'login' %}" class="top-menu" title="ログイン"><span class="glyphicon glyphicon-log-in"><br>login</span></a>
 				{% endif %}
-				<li><a href="/">記事リストページ(メイン)</a></li>
-				<li><a href="{% url 'post_new' %}">記事作成ページ</a></li>
-				<li><a href="{% url 'post_draft_list' %}">未公開記事リストページ</a></li>
-				
-			</ul>
-		</nav>
+				<h1><a href="/"><img src="{% static 'image/logo.png' %}">  Django Blog</a></h1>
+				<hr>
+					<ul class="nav-list">
+						{% if user.is_authenticated %}
+						<!--表示なし-->
+						{% else %}
+						<li class="nav-list-item"><a href="{% url 'login' %}">ログインページ</a></li>
+						{% endif %}
+						<li class="nav-list-item"><a href="/">記事リストページ(メイン)</a></li>
+						<li class="nav-list-item"><a href="{% url 'post_new' %}">記事作成ページ</a></li>
+						<li class="nav-list-item"><a href="{% url 'post_draft_list' %}">未公開記事リストページ</a></li>
+						
+					</ul>
+		
 
-		</div>
+			</div>
 
-		<div class="content container">
-			<div class="row">
-                <div class="col-md-11">
-				{% block content %}
-				{% endblock %}
+			<div class="content container">
+				<div class="row">
+					<div class="col-md-11">
+					{% block content %}
+					{% endblock %}
+					</div>
 				</div>
 			</div>
+			
+			<footer>
+				<p>Django Blog © All rights reserved by M.Y.</p>
+			</footer>
 		</div>
 		<!-- <div>
 			<h3><a href="">2021.7.1</a></h2>
